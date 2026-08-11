@@ -1,0 +1,15 @@
+Healthcare+/
+│
+├── frontend/
+│   ├── package.json
+│   ├── vite.config.ts
+│   └── src/
+│
+├── backend/
+│   ├── pom.xml
+│   ├── mvnw
+│   ├── src/
+│   └── .mvn/
+│
+├── .gitignore
+└── README.md (optional for now)

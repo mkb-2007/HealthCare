@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Search, Eye, Pencil, Trash2, User, Loader2, RefreshCw } from "lucide-react";
 import { toast } from "sonner";
-import api from "../../api/api";
+import api, { API_BASE_URL } from "../../api/api";
 import { DashboardLayout } from "../components/DashboardLayout";
 import { StatusBadge } from "../components/StatusBadge";
 import { Input } from "../components/ui/input";
@@ -87,7 +87,7 @@ export function ManagePatients() {
     if (patient.profileImage.startsWith("http://") || patient.profileImage.startsWith("https://")) {
       return patient.profileImage;
     }
-    return `http://localhost:8080/uploads/profile/${patient.profileImage}`;
+    return `${API_BASE_URL}/uploads/profile/${patient.profileImage}`;
   };
 
   const filteredPatients = patientsList.filter((p) => {

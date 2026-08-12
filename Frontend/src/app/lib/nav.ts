@@ -10,6 +10,7 @@ import {
   BarChart3,
 } from "lucide-react";
 import type { NavItem } from "../components/DashboardLayout";
+import { API_BASE_URL } from "../../api/api";
 
 export const patientNav: NavItem[] = [
   { label: "Dashboard", to: "/dashboard", icon: LayoutDashboard },
@@ -36,7 +37,7 @@ export const patientUser = {
       if (patient.profileImage.startsWith("http")) {
         return patient.profileImage;
       }
-      return `http://localhost:8080/api/patient/image/${patient.id}`;
+      return `${API_BASE_URL}/api/patient/image/${patient.id}`;
     }
     return undefined;
   },

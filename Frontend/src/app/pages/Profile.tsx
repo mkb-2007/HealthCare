@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { Camera, Save, User, Eye, EyeOff, Upload, Trash2, X } from "lucide-react";
 import { toast } from "sonner";
-import api from "../../api/api";
+import api, { API_BASE_URL } from "../../api/api";
 import { DashboardLayout } from "../components/DashboardLayout";
 import { Button } from "../components/ui/button";
 import { ConfirmDialog } from "../components/ui/ConfirmDialog";
@@ -372,7 +372,7 @@ export function Profile() {
       : (storedPatient.profileImage
           ? storedPatient.profileImage.startsWith("http")
             ? storedPatient.profileImage
-            : `http://localhost:8080/uploads/profile/${storedPatient.profileImage}`
+            : `${API_BASE_URL}/uploads/profile/${storedPatient.profileImage}`
           : null));
 
   return (

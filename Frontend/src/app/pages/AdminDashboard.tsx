@@ -38,6 +38,7 @@ import {
   type DashboardResponse,
 } from "../../api/AdminDashboardAPI";
 import { Button } from "../components/ui/button";
+import { API_BASE_URL } from "../../api/api";
 
 export function AdminDashboard() {
   const { theme } = useTheme();
@@ -405,7 +406,7 @@ export function AdminDashboard() {
                     const imgUrl = p.profileImage
                       ? p.profileImage.startsWith("http")
                         ? p.profileImage
-                        : `http://localhost:8080/uploads/profile/${p.profileImage}`
+                        : `${API_BASE_URL}/uploads/profile/${p.profileImage}`
                       : null;
 
                     return (

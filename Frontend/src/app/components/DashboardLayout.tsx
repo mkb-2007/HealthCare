@@ -12,6 +12,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Input } from "./ui/input";
 import { useTheme } from "../context/ThemeContext";
 import { useNotifications } from "../context/NotificationContext";
+import { API_BASE_URL } from "../../api/api";
 
 export interface NavItem {
   label: string;
@@ -230,7 +231,7 @@ function ProfileDropdown({
     : (currentPatient.profileImage
         ? (currentPatient.profileImage.startsWith("http")
             ? currentPatient.profileImage
-            : `http://localhost:8080/uploads/profile/${currentPatient.profileImage}`)
+            : `${API_BASE_URL}/uploads/profile/${currentPatient.profileImage}`)
         : user.photo);
 
   useEffect(() => {
